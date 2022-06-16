@@ -1,0 +1,7 @@
+<map id="tegument_behavioral_group" name="tegument_behavioral_group">
+<area shape="rect" id="node1" title="function that select sub&#45;behavioral group for tegument" alt="" coords="5,23,148,65"/>
+<area shape="rect" id="node2" href="$model_8c.html#a059df531c8f30b7a8700a6b1209fd666" title="function that increase physiological tegument variable" alt="" coords="196,5,255,32"/>
+<area shape="rect" id="node5" href="$model_8c.html#a23bae2c9f13446680670ca6f98121f22" title="function that select send mootor control for groooming spot seeking" alt="" coords="303,56,445,83"/>
+<area shape="rect" id="node3" href="$model_8c.html#a1ae2fb5c7962e93ebf2074037de03226" title="function that make a grooming animation" alt="" coords="313,5,435,32"/>
+<area shape="rect" id="node4" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="493,31,548,57"/>
+</map>

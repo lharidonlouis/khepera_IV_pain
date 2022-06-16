@@ -1,0 +1,5 @@
+<map id="integrity_behavioral_group" name="integrity_behavioral_group">
+<area shape="rect" id="node1" title="function that select sub&#45;behavioral group for integrity" alt="" coords="5,5,140,47"/>
+<area shape="rect" id="node2" href="$model_8c.html#a99aa10b152e9998e638b721be1840266" title="function that give motor speed avoidance control" alt="" coords="188,13,241,39"/>
+<area shape="rect" id="node3" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="289,13,344,39"/>
+</map>

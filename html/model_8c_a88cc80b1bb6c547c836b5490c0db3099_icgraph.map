@@ -1,0 +1,6 @@
+<map id="stop_moving" name="stop_moving">
+<area shape="rect" id="node1" title="stop robot&#39;s motor" alt="" coords="209,20,305,46"/>
+<area shape="rect" id="node2" href="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program function." alt="" coords="5,20,56,46"/>
+<area shape="rect" id="node3" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="104,20,161,46"/>
+<area shape="rect" id="node4" href="$model_8c.html#a51433c029591b579b2325061d785ca36" title="Robot is controlled with zqsd input, a for quit, e for stop." alt="" coords="113,70,153,97"/>
+</map>

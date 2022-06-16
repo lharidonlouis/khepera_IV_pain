@@ -1,0 +1,5 @@
+<map id="run" name="run">
+<area shape="rect" id="node1" title="Robot is controlled with zqsd input, a for quit, e for stop." alt="" coords="5,31,45,57"/>
+<area shape="rect" id="node2" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="114,5,169,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#a88cc80b1bb6c547c836b5490c0db3099" title="stop robot&#39;s motor" alt="" coords="93,56,189,83"/>
+</map>

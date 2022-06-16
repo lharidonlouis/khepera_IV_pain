@@ -1,0 +1,14 @@
+digraph "energy_behavioral_group"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="energy_behavioral_group",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="function that select sub-behavioral group for energy"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="eat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a03aafff51ffe76d9da3f028bef80161b",tooltip="function that increase physiological energy variable"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="seek_food",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#ac05d0fc423a7e961f72d76e0b5cdfa9e",tooltip="function that select send mootor control for food seeking"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="move",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e",tooltip="function to make robot move"];
+}

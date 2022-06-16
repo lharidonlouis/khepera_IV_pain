@@ -1,0 +1,4 @@
+<map id="avoid" name="avoid">
+<area shape="rect" id="node1" title="function that give motor speed avoidance control" alt="" coords="5,5,59,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="107,5,161,32"/>
+</map>

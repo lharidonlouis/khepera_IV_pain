@@ -1,0 +1,598 @@
+\hypertarget{model_8c}{}\doxysection{model.\+c File Reference}
+\label{model_8c}\index{model.c@{model.c}}
+
+
+Simple model for decision making in a TRP with Khepera IV robot.  
+
+
+{\ttfamily \#include $<$khepera/khepera.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for model.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{model_8c_a525335710b53cb064ca56b936120431e}{\+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}}
+\begin{DoxyCompactList}\small\item\em for using math constants \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{model_8c_aac3553b3932cbfeeac4526ce7ca0336b}{SPEED}}~200
+\begin{DoxyCompactList}\small\item\em speed basic input \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{model_8c_a078b6c12f1ac6819cecef90ab5870276}{TIME}}~100000
+\begin{DoxyCompactList}\small\item\em time for model update (in ms) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{model_8c_a84977424b647dd9248ebf1436aaa1cc8}{MAXBUFFERSIZE}}~128
+\begin{DoxyCompactList}\small\item\em Buffer size for robot communication. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{model_8c_ae4f6058c45a018de2c45bc43f0c405ae}{MAX\+\_\+\+DIST}}~500
+\begin{DoxyCompactList}\small\item\em Maximum distance for ir sensor. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{model_8c_a0242b872f13ae044f308ee8865fecc57}{MIN\+\_\+\+DIST}}~80
+\begin{DoxyCompactList}\small\item\em or 70 $\vert$ minimum distance for ir sensor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{model_8c_a024bee244394eeb174d636f297a7e857}{display\+\_\+battery}} ()
+\begin{DoxyCompactList}\small\item\em display battery info \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_adf91428d3c07a9e825283b794ead7f4c}{set\+\_\+leds}} (int left, int right, int back)
+\begin{DoxyCompactList}\small\item\em function that set color for 4 robot leds \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_acfb70eef697ff0c61b7a04fd7bb857ba}{turn\+\_\+off\+\_\+leds}} ()
+\begin{DoxyCompactList}\small\item\em function that turn of all leds \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a13b684a14e79f0144fbfdbd71bb6bc6e}{death\+\_\+animation}} ()
+\begin{DoxyCompactList}\small\item\em function that make animation for death \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{model_8c_ae44811dea0e1843c571619d692a463ac}{damage\+\_\+animation}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em function that make animation when robot has damage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a5bf656f8e903944d7b5c9e1166eb71c4}{winner\+\_\+takes\+\_\+all}} (float m1, float m2, float m3)
+\begin{DoxyCompactList}\small\item\em Winner take all for decision making. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a88cc80b1bb6c547c836b5490c0db3099}{stop\+\_\+moving}} ()
+\begin{DoxyCompactList}\small\item\em stop robot\textquotesingle{}s motor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a22159ec5786bcd0c518d86dc97d44b4e}{move}} (float motor\+\_\+left, float motor\+\_\+right)
+\begin{DoxyCompactList}\small\item\em function to make robot move \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a51433c029591b579b2325061d785ca36}{run}} (void)
+\begin{DoxyCompactList}\small\item\em Robot is controlled with zqsd input, a for quit, e for stop. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_ad3bb390d68f40aaee86dbed19b15218c}{induce\+\_\+damage}} (float level)
+\begin{DoxyCompactList}\small\item\em function that decrease physiological variable for integrity \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_ae0c3fbb5b2d6e17fcd9f47246bca839d}{read\+\_\+and\+\_\+print\+\_\+sensors}} (void)
+\begin{DoxyCompactList}\small\item\em function to read and print robot\textquotesingle{}s ir and us sensors \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a0d6be2c2d6d79c4bf8daa9019640e5a7}{get\+\_\+sensors\+\_\+history}} (void)
+\begin{DoxyCompactList}\small\item\em function that store actual for sensor values for later use \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_afdbf3026a1d40b44651f0f5f76ad7102}{get\+\_\+sensors}} (void)
+\begin{DoxyCompactList}\small\item\em function to read and store sensors values \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a4839931386cb5fae8e015d2173de57e0}{compute\+\_\+deficit}} (void)
+\begin{DoxyCompactList}\small\item\em function that compute deficits for physiological internal values \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a60c16f1cf7d0c222208477d5810a4020}{compute\+\_\+motivations}} (void)
+\begin{DoxyCompactList}\small\item\em function that compute motivations for physiological internal values \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a762377c04f5d71221c66a23c81777f96}{get\+\_\+mean\+\_\+normalized}} (int table\mbox{[}$\,$\mbox{]}, int size, int min, int max)
+\begin{DoxyCompactList}\small\item\em function that get mean of table and normalize it \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a77821830aaf0356c92238ea9d040fd9f}{get\+\_\+mean\+\_\+normalized\+\_\+f}} (float table\mbox{[}$\,$\mbox{]}, int size, float min, float max)
+\begin{DoxyCompactList}\small\item\em function that get mean of table and normalize it but for a float table \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a507792eccb7b93c5c65436fd8f37c84b}{compute\+\_\+cues}} (void)
+\begin{DoxyCompactList}\small\item\em function that compute cues \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a1a58010fca227c64de0d57e5f5a8a0ea}{decrease\+\_\+physoligical\+\_\+variables}} (void)
+\begin{DoxyCompactList}\small\item\em function that decrease physiological variables \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a045b7ae19635db4c0c565677d9cd3071}{circ\+\_\+damage}} (void)
+\begin{DoxyCompactList}\small\item\em function that compute circulare based damage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_aff392d961d3f5d759aa041d27780a848}{speed\+\_\+damage}} (void)
+\begin{DoxyCompactList}\small\item\em function that compute speed based damage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a9772aee7d0e45a3f4927f4df78ee5ed7}{check\+\_\+if\+\_\+damage}} (void)
+\begin{DoxyCompactList}\small\item\em function that check if there is damage based on two types of damage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_ab5b9c8b8ad9d20f047d6ff2ba808dacc}{update\+\_\+vars}} (int loopstart)
+\begin{DoxyCompactList}\small\item\em function that update the internal variables, compute deficits, cues and motivation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_aa752ff33a7112b07dc5f606c72432459}{print\+\_\+vars}} ()
+\begin{DoxyCompactList}\small\item\em function that print internal variables \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a970963d2eed5a3ef973adef84ac6b735}{print\+\_\+sensors}} (void)
+\begin{DoxyCompactList}\small\item\em function that print sensor values \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_ae5cb99f889d3e3964f2107a2f0b660e3}{print\+\_\+sensors\+\_\+history}} (void)
+\begin{DoxyCompactList}\small\item\em function that print previous sensor values \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_af95500fa642cb6e2114df9f22cef1b49}{print\+\_\+sensors\+\_\+diff}} (void)
+\begin{DoxyCompactList}\small\item\em function that print diff between actual and previous sensor data \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a5bf485e78be0ae99ec1a866746d462b9}{print\+\_\+sensors\+\_\+speed}} (void)
+\begin{DoxyCompactList}\small\item\em function that print speed table \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a4c16fb089e42438d504caa856a3c97ac}{print\+\_\+sensors\+\_\+circ\+\_\+speed}} (void)
+\begin{DoxyCompactList}\small\item\em function that print diff between actual and previous sensor data \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a8d387ae5e71c0596ea733356d5304663}{print\+\_\+clean\+\_\+sensor}} (void)
+\begin{DoxyCompactList}\small\item\em function that print previous and actual sensor values \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a03aafff51ffe76d9da3f028bef80161b}{eat}} (void)
+\begin{DoxyCompactList}\small\item\em function that increase physiological energy variable \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_ac05d0fc423a7e961f72d76e0b5cdfa9e}{seek\+\_\+food}} (void)
+\begin{DoxyCompactList}\small\item\em function that select send mootor control for food seeking \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a256b18090d240375c58448c8693d391b}{energy\+\_\+behavioral\+\_\+group}} (void)
+\begin{DoxyCompactList}\small\item\em function that select sub-\/behavioral group for energy \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a1ae2fb5c7962e93ebf2074037de03226}{groom\+\_\+animation}} (void)
+\begin{DoxyCompactList}\small\item\em function that make a grooming animation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a23bae2c9f13446680670ca6f98121f22}{seek\+\_\+grooming\+\_\+spot}} (void)
+\begin{DoxyCompactList}\small\item\em function that select send mootor control for groooming spot seeking \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a059df531c8f30b7a8700a6b1209fd666}{groom}} (void)
+\begin{DoxyCompactList}\small\item\em function that increase physiological tegument variable \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a9b71e438b829313af4267abdfa355e66}{tegument\+\_\+behavioral\+\_\+group}} (void)
+\begin{DoxyCompactList}\small\item\em function that select sub-\/behavioral group for tegument \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a99aa10b152e9998e638b721be1840266}{avoid}} (void)
+\begin{DoxyCompactList}\small\item\em function that give motor speed avoidance control \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a8de3d99966a8a9e1e793c359877b04a3}{integrity\+\_\+behavioral\+\_\+group}} (void)
+\begin{DoxyCompactList}\small\item\em function that select sub-\/behavioral group for integrity \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a42168e51ee7171713d66b7dcbb41887a}{compute\+\_\+speed}} (int bhv)
+\begin{DoxyCompactList}\small\item\em function that select behavioral grroup to compute robot\textquotesingle{}s speed based on input \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_afff2d3c32d3cf9812c2844d012a17142}{model}} (void)
+\begin{DoxyCompactList}\small\item\em Robot model based on our work. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main program function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+knet\+\_\+dev\+\_\+t $\ast$ \mbox{\hyperlink{model_8c_ab6f899a116b8a0c5179cd0f0cef9c4d6}{ds\+Pic}}
+\begin{DoxyCompactList}\small\item\em robot pic microcontroller access \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_accee4678747584fcd7984a1a9530cc7c}{left\+\_\+speed}}
+\begin{DoxyCompactList}\small\item\em speed of left motor \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a5a3dc9f0e243ebe2212e56a172122fbf}{right\+\_\+speed}}
+\begin{DoxyCompactList}\small\item\em speed of right motor \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_af4f1fe78f78ef60528c944f991ceca7f}{var\+\_\+energy}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em physological variable for ernergy \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a5cf4f7c491e651d5fac669ae60af667d}{var\+\_\+tegument}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em physological variable for tegument \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a24043223f501c4103d8ad849dcfe7416}{var\+\_\+integrity}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em physological variable for integrity \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_acc0df53ad73ec6a6bd79841b15504a66}{def\+\_\+energy}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em deficit for ernergy \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a5f9eb877fe2738dae536a6f5a0fb1080}{def\+\_\+tegument}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em deficit for tegument \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a0689660b72c446b95cd5c9d9dc6a91dd}{def\+\_\+integrity}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em deficit for integrity \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a058d1dbc8d7d4223a3071bd3a7e46b9f}{cue\+\_\+energy}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em cue for ernergy \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a4c429a7e08bb24d3367e060a10cb98ca}{cue\+\_\+tegument}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em cue for tegument \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_ad2c9a6bd1bf91b6fd3c76584b941da17}{cue\+\_\+integrity}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em cue for integrity \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a273125eebd2bdb137979392cc775f77f}{mot\+\_\+energy}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em motivation for ernergy \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_afb3d8fe19864e05769a9cae731aa8761}{mot\+\_\+tegument}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em motivation for tegument \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a52c8382801478332b7788ef390ff25bc}{mot\+\_\+integrity}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em motivation for integrity \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a8498583fd530c799fdd9046d09e10134}{\+\_\+secure\+\_\+led\+\_\+animation}} = 0
+\begin{DoxyCompactList}\small\item\em to secure threading led animation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a2975e70127642bfc88c4783c37eca03b}{prev\+\_\+sensors}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em to store previous sensors values for \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{model_8c_a1ee85ec09b3bcd5c3e9ef979cbf91013}{sensors}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em actual sensors values \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_a074e970c2069dbb55b2f964e3e1b5a11}{speed}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em table for speeed based on IR sensor values \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\+\_\+speed}} \mbox{[}7\mbox{]}
+\begin{DoxyCompactList}\small\item\em table for circular speeed based on IR sensor values (size is n-\/1 because of circular speeed) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple model for decision making in a TRP with Khepera IV robot. 
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+Louis L\textquotesingle{}Haridon 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20 février 2022
+\end{DoxyDate}
+Decision making model based on a TRP homeostatis model with a Khepera IV robot. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{model_8c_a525335710b53cb064ca56b936120431e}\label{model_8c_a525335710b53cb064ca56b936120431e}} 
+\index{model.c@{model.c}!\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}}
+\index{\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{\_USE\_MATH\_DEFINES}{\_USE\_MATH\_DEFINES}}
+{\footnotesize\ttfamily \#define \+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}
+
+
+
+for using math constants 
+
+\mbox{\Hypertarget{model_8c_ae4f6058c45a018de2c45bc43f0c405ae}\label{model_8c_ae4f6058c45a018de2c45bc43f0c405ae}} 
+\index{model.c@{model.c}!MAX\_DIST@{MAX\_DIST}}
+\index{MAX\_DIST@{MAX\_DIST}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_DIST}{MAX\_DIST}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DIST~500}
+
+
+
+Maximum distance for ir sensor. 
+
+\mbox{\Hypertarget{model_8c_a84977424b647dd9248ebf1436aaa1cc8}\label{model_8c_a84977424b647dd9248ebf1436aaa1cc8}} 
+\index{model.c@{model.c}!MAXBUFFERSIZE@{MAXBUFFERSIZE}}
+\index{MAXBUFFERSIZE@{MAXBUFFERSIZE}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{MAXBUFFERSIZE}{MAXBUFFERSIZE}}
+{\footnotesize\ttfamily \#define MAXBUFFERSIZE~128}
+
+
+
+Buffer size for robot communication. 
+
+\mbox{\Hypertarget{model_8c_a0242b872f13ae044f308ee8865fecc57}\label{model_8c_a0242b872f13ae044f308ee8865fecc57}} 
+\index{model.c@{model.c}!MIN\_DIST@{MIN\_DIST}}
+\index{MIN\_DIST@{MIN\_DIST}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_DIST}{MIN\_DIST}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+DIST~80}
+
+
+
+or 70 $\vert$ minimum distance for ir sensor 
+
+\mbox{\Hypertarget{model_8c_aac3553b3932cbfeeac4526ce7ca0336b}\label{model_8c_aac3553b3932cbfeeac4526ce7ca0336b}} 
+\index{model.c@{model.c}!SPEED@{SPEED}}
+\index{SPEED@{SPEED}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{SPEED}{SPEED}}
+{\footnotesize\ttfamily \#define SPEED~200}
+
+
+
+speed basic input 
+
+\mbox{\Hypertarget{model_8c_a078b6c12f1ac6819cecef90ab5870276}\label{model_8c_a078b6c12f1ac6819cecef90ab5870276}} 
+\index{model.c@{model.c}!TIME@{TIME}}
+\index{TIME@{TIME}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{TIME}{TIME}}
+{\footnotesize\ttfamily \#define TIME~100000}
+
+
+
+time for model update (in ms) 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{model_8c_a99aa10b152e9998e638b721be1840266}\label{model_8c_a99aa10b152e9998e638b721be1840266}} 
+\index{model.c@{model.c}!avoid@{avoid}}
+\index{avoid@{avoid}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{avoid()}{avoid()}}
+{\footnotesize\ttfamily int avoid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that give motor speed avoidance control 
+
+\DoxyHorRuler{0}
+ Danger avoidance behavior
+
+\begin{DoxyReturn}{Returns}
+0 when ok 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{810                \{}
+\DoxyCodeLine{811     \textcolor{keywordtype}{int} min = 0, max = 1023;}
+\DoxyCodeLine{812     \textcolor{comment}{// Normalization of sensors}}
+\DoxyCodeLine{813     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{814     \textcolor{keywordtype}{float} normalized\_sensors[8];}
+\DoxyCodeLine{815     \textcolor{keywordflow}{for}(i=0;i<8;i++)\{}
+\DoxyCodeLine{816         normalized\_sensors[i] = (\mbox{\hyperlink{model_8c_a1ee85ec09b3bcd5c3e9ef979cbf91013}{sensors}}[i]-\/min)/(max-\/min);}
+\DoxyCodeLine{817     \}}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819     \textcolor{comment}{//TODO }}
+\DoxyCodeLine{820     \textcolor{comment}{//Braitenberg avoidance}}
+\DoxyCodeLine{821     \textcolor{keywordtype}{float} weight\_l[8] = \{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0\};}
+\DoxyCodeLine{822     \textcolor{keywordtype}{float} weight\_r[8] = \{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0\};}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824     \textcolor{keywordflow}{for}(i=0;i<8; i++)\{}
+\DoxyCodeLine{825         \mbox{\hyperlink{model_8c_accee4678747584fcd7984a1a9530cc7c}{left\_speed}} += weight\_l[i]*normalized\_sensors[i];}
+\DoxyCodeLine{826         \mbox{\hyperlink{model_8c_a5a3dc9f0e243ebe2212e56a172122fbf}{right\_speed}} += weight\_r[i]*normalized\_sensors[i];}
+\DoxyCodeLine{827     \}}
+\DoxyCodeLine{828     \mbox{\hyperlink{model_8c_accee4678747584fcd7984a1a9530cc7c}{left\_speed}} /= 8;}
+\DoxyCodeLine{829     \mbox{\hyperlink{model_8c_a5a3dc9f0e243ebe2212e56a172122fbf}{right\_speed}} /= 8;}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{832 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{model_8c_a9772aee7d0e45a3f4927f4df78ee5ed7}\label{model_8c_a9772aee7d0e45a3f4927f4df78ee5ed7}} 
+\index{model.c@{model.c}!check\_if\_damage@{check\_if\_damage}}
+\index{check\_if\_damage@{check\_if\_damage}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{check\_if\_damage()}{check\_if\_damage()}}
+{\footnotesize\ttfamily int check\+\_\+if\+\_\+damage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that check if there is damage based on two types of damage 
+
+\DoxyHorRuler{0}
+ check if damage
+
+\begin{DoxyReturn}{Returns}
+0 when not, 1 when yes 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{562                          \{}
+\DoxyCodeLine{563     \textcolor{keywordflow}{if}(\mbox{\hyperlink{model_8c_a045b7ae19635db4c0c565677d9cd3071}{circ\_damage}}() || \mbox{\hyperlink{model_8c_aff392d961d3f5d759aa041d27780a848}{speed\_damage}}())}
+\DoxyCodeLine{564         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{565     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{566 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a9772aee7d0e45a3f4927f4df78ee5ed7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a9772aee7d0e45a3f4927f4df78ee5ed7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_a045b7ae19635db4c0c565677d9cd3071}\label{model_8c_a045b7ae19635db4c0c565677d9cd3071}} 
+\index{model.c@{model.c}!circ\_damage@{circ\_damage}}
+\index{circ\_damage@{circ\_damage}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{circ\_damage()}{circ\_damage()}}
+{\footnotesize\ttfamily int circ\+\_\+damage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that compute circulare based damage 
+
+\DoxyHorRuler{0}
+ TODO Circular damage function
+
+\begin{DoxyReturn}{Returns}
+0 when not, 1 when yes 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{495                      \{}
+\DoxyCodeLine{496     \textcolor{comment}{// TODO debug this function}}
+\DoxyCodeLine{497     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{498     \textcolor{keywordtype}{int} diff[7]; \textcolor{comment}{// generate an array of n-\/1 value to compute difference between ith sensor and ith-\/1 history value }}
+\DoxyCodeLine{499     \textcolor{keywordtype}{float} ray = 6; \textcolor{comment}{// robot's ray in cm}}
+\DoxyCodeLine{500     \textcolor{keywordflow}{for}(i=1; i<7; i++)\{}
+\DoxyCodeLine{501         diff[i] = (\mbox{\hyperlink{model_8c_a1ee85ec09b3bcd5c3e9ef979cbf91013}{sensors}}[i]-\/\mbox{\hyperlink{model_8c_a2975e70127642bfc88c4783c37eca03b}{prev\_sensors}}[i-\/1]); \textcolor{comment}{// compute distance between neighboor sensor history and actual value}}
+\DoxyCodeLine{502         \textcolor{keywordflow}{if}(abs(diff[i]) < 0.5*\mbox{\hyperlink{model_8c_a1ee85ec09b3bcd5c3e9ef979cbf91013}{sensors}}[i])\{ \textcolor{comment}{// if this difference is less than 50\% of actual sensor value}}
+\DoxyCodeLine{503             \mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i] = (M\_PI*ray)/\mbox{\hyperlink{model_8c_a078b6c12f1ac6819cecef90ab5870276}{TIME}};}
+\DoxyCodeLine{504         \}}
+\DoxyCodeLine{505         \textcolor{comment}{// printf("{}s[\%d]=\%d-\/ps[\%d]=\%d => d[\%d]=\%d "{},i, sensors[i], i-\/1, prev\_sensors[i-\/1], i, diff[i]); }}
+\DoxyCodeLine{506         \textcolor{comment}{// printf("{} s[\%d]:\%.2f | "{},i, circ\_speed[i]);}}
+\DoxyCodeLine{507     \}}
+\DoxyCodeLine{508     \textcolor{comment}{//  Now we're computing if scratching is spreading aroung robot and increasing damage if so}}
+\DoxyCodeLine{509     \textcolor{keywordflow}{for}(i=1; i<7; i++)\{}
+\DoxyCodeLine{510         \textcolor{keywordflow}{if}( abs(\mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i]-\/\mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i-\/1]) < 0.5*\mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i])\{}
+\DoxyCodeLine{511             \mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i-\/1] *= 2;}
+\DoxyCodeLine{512             \mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i] *= 2;}
+\DoxyCodeLine{513         \}}
+\DoxyCodeLine{514     \}}
+\DoxyCodeLine{515     \textcolor{keywordflow}{for}(i=0;i<7; i++)\{}
+\DoxyCodeLine{516         \mbox{\hyperlink{model_8c_ad3bb390d68f40aaee86dbed19b15218c}{induce\_damage}}(\mbox{\hyperlink{model_8c_aca8cf00b69caa2362577672a01a6d7b8}{circ\_speed}}[i]); \textcolor{comment}{// inducing damage based on speed}}
+\DoxyCodeLine{517     \}}
+\DoxyCodeLine{518     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{519 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a045b7ae19635db4c0c565677d9cd3071_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a045b7ae19635db4c0c565677d9cd3071_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_a507792eccb7b93c5c65436fd8f37c84b}\label{model_8c_a507792eccb7b93c5c65436fd8f37c84b}} 
+\index{model.c@{model.c}!compute\_cues@{compute\_cues}}
+\index{compute\_cues@{compute\_cues}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{compute\_cues()}{compute\_cues()}}
+{\footnotesize\ttfamily int compute\+\_\+cues (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that compute cues 
+
+\DoxyHorRuler{0}
+ Compute cues
+
+\begin{DoxyReturn}{Returns}
+0 when ok 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{470                       \{}
+\DoxyCodeLine{471     \mbox{\hyperlink{model_8c_a058d1dbc8d7d4223a3071bd3a7e46b9f}{cue\_energy}} = 0.06;}
+\DoxyCodeLine{472     \mbox{\hyperlink{model_8c_a4c429a7e08bb24d3367e060a10cb98ca}{cue\_tegument}} = 0.055;}
+\DoxyCodeLine{473     \mbox{\hyperlink{model_8c_ad2c9a6bd1bf91b6fd3c76584b941da17}{cue\_integrity}} = \mbox{\hyperlink{model_8c_a762377c04f5d71221c66a23c81777f96}{get\_mean\_normalized}}(\mbox{\hyperlink{model_8c_a1ee85ec09b3bcd5c3e9ef979cbf91013}{sensors}},8,\mbox{\hyperlink{model_8c_a0242b872f13ae044f308ee8865fecc57}{MIN\_DIST}}, \mbox{\hyperlink{model_8c_ae4f6058c45a018de2c45bc43f0c405ae}{MAX\_DIST}});}
+\DoxyCodeLine{474     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{475 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{model_8c_a507792eccb7b93c5c65436fd8f37c84b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a507792eccb7b93c5c65436fd8f37c84b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_a4839931386cb5fae8e015d2173de57e0}\label{model_8c_a4839931386cb5fae8e015d2173de57e0}} 
+\index{model.c@{model.c}!compute\_deficit@{compute\_deficit}}
+\index{compute\_deficit@{compute\_deficit}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{compute\_deficit()}{compute\_deficit()}}
+{\footnotesize\ttfamily int compute\+\_\+deficit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that compute deficits for physiological internal values 
+
+\DoxyHorRuler{0}
+ Compute internal deficits
+
+\begin{DoxyReturn}{Returns}
+0 when ok 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{409                          \{}
+\DoxyCodeLine{410     \textcolor{comment}{// def\_energy = (0.85 -\/ var\_energy)>0 ?(0.85 -\/ var\_energy) : 0.0 ;}}
+\DoxyCodeLine{411     \textcolor{comment}{// def\_tegument = (0.85 -\/ var\_tegument)>0 ?(0.85 -\/ var\_tegument) : 0.0 ;}}
+\DoxyCodeLine{412     \textcolor{comment}{// def\_integrity = (0.85 -\/ var\_integrity)>0 ?(0.85 -\/ var\_integrity) : 0.0 ;}}
+\DoxyCodeLine{413     \mbox{\hyperlink{model_8c_acc0df53ad73ec6a6bd79841b15504a66}{def\_energy}} = 1.0 -\/ \mbox{\hyperlink{model_8c_af4f1fe78f78ef60528c944f991ceca7f}{var\_energy}};}
+\DoxyCodeLine{414     \mbox{\hyperlink{model_8c_a5f9eb877fe2738dae536a6f5a0fb1080}{def\_tegument}} = 1.0 -\/ \mbox{\hyperlink{model_8c_a5cf4f7c491e651d5fac669ae60af667d}{var\_tegument}};}
+\DoxyCodeLine{415     \mbox{\hyperlink{model_8c_a0689660b72c446b95cd5c9d9dc6a91dd}{def\_integrity}} = 1.0 -\/ \mbox{\hyperlink{model_8c_a24043223f501c4103d8ad849dcfe7416}{var\_integrity}};}
+\DoxyCodeLine{416     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{417 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a4839931386cb5fae8e015d2173de57e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_a60c16f1cf7d0c222208477d5810a4020}\label{model_8c_a60c16f1cf7d0c222208477d5810a4020}} 
+\index{model.c@{model.c}!compute\_motivations@{compute\_motivations}}
+\index{compute\_motivations@{compute\_motivations}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{compute\_motivations()}{compute\_motivations()}}
+{\footnotesize\ttfamily int compute\+\_\+motivations (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+function that compute motivations for physiological internal values 
+
+\DoxyHorRuler{0}
+ Compute motivations
+
+\begin{DoxyReturn}{Returns}
+0 when ok 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{425                              \{}
+\DoxyCodeLine{426     \mbox{\hyperlink{model_8c_a273125eebd2bdb137979392cc775f77f}{mot\_energy}} = \mbox{\hyperlink{model_8c_acc0df53ad73ec6a6bd79841b15504a66}{def\_energy}} + (\mbox{\hyperlink{model_8c_acc0df53ad73ec6a6bd79841b15504a66}{def\_energy}} * \mbox{\hyperlink{model_8c_a058d1dbc8d7d4223a3071bd3a7e46b9f}{cue\_energy}});}
+\DoxyCodeLine{427     \mbox{\hyperlink{model_8c_afb3d8fe19864e05769a9cae731aa8761}{mot\_tegument}} = \mbox{\hyperlink{model_8c_a5f9eb877fe2738dae536a6f5a0fb1080}{def\_tegument}} + (\mbox{\hyperlink{model_8c_a5f9eb877fe2738dae536a6f5a0fb1080}{def\_tegument}} * \mbox{\hyperlink{model_8c_a4c429a7e08bb24d3367e060a10cb98ca}{cue\_tegument}});}
+\DoxyCodeLine{428     \mbox{\hyperlink{model_8c_a52c8382801478332b7788ef390ff25bc}{mot\_integrity}} = \mbox{\hyperlink{model_8c_a0689660b72c446b95cd5c9d9dc6a91dd}{def\_integrity}} + (\mbox{\hyperlink{model_8c_a0689660b72c446b95cd5c9d9dc6a91dd}{def\_integrity}} * \mbox{\hyperlink{model_8c_ad2c9a6bd1bf91b6fd3c76584b941da17}{cue\_integrity}});}
+\DoxyCodeLine{429     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{430 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a60c16f1cf7d0c222208477d5810a4020_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_a42168e51ee7171713d66b7dcbb41887a}\label{model_8c_a42168e51ee7171713d66b7dcbb41887a}} 
+\index{model.c@{model.c}!compute\_speed@{compute\_speed}}
+\index{compute\_speed@{compute\_speed}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{compute\_speed()}{compute\_speed()}}
+{\footnotesize\ttfamily int compute\+\_\+speed (\begin{DoxyParamCaption}\item[{int}]{bhv }\end{DoxyParamCaption})}
+
+
+
+function that select behavioral grroup to compute robot\textquotesingle{}s speed based on input 
+
+\DoxyHorRuler{0}
+ Select behavioral group to compute speed
+
+\begin{DoxyReturn}{Returns}
+0 when ok 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em bhv} & the selected behavioral group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+1 if energy, 2 if tegument, 3 if integrity, -\/1 if error 
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{852                           \{}
+\DoxyCodeLine{853     \textcolor{keywordflow}{switch}(bhv)\{}
+\DoxyCodeLine{854         \textcolor{keywordflow}{case} 1 : \textcolor{comment}{// energy behaviorral group}}
+\DoxyCodeLine{855             \mbox{\hyperlink{model_8c_a256b18090d240375c58448c8693d391b}{energy\_behavioral\_group}}();}
+\DoxyCodeLine{856             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{857         \textcolor{keywordflow}{case} 2 : \textcolor{comment}{// tegument behaviorral group}}
+\DoxyCodeLine{858             \mbox{\hyperlink{model_8c_a9b71e438b829313af4267abdfa355e66}{tegument\_behavioral\_group}}();}
+\DoxyCodeLine{859             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{860         \textcolor{keywordflow}{case} 3 : \textcolor{comment}{// integrity behaviorral group}}
+\DoxyCodeLine{861             \mbox{\hyperlink{model_8c_a8de3d99966a8a9e1e793c359877b04a3}{integrity\_behavioral\_group}}();}
+\DoxyCodeLine{862             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{863         \textcolor{keywordflow}{case} -\/1 : \textcolor{comment}{// Error -\/> stop robot}}
+\DoxyCodeLine{864         default :}
+\DoxyCodeLine{865             \mbox{\hyperlink{model_8c_accee4678747584fcd7984a1a9530cc7c}{left\_speed}} = 0.0;}
+\DoxyCodeLine{866             \mbox{\hyperlink{model_8c_a5a3dc9f0e243ebe2212e56a172122fbf}{right\_speed}} = 0.0;}
+\DoxyCodeLine{867             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{868     \}}
+\DoxyCodeLine{869     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{870 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a42168e51ee7171713d66b7dcbb41887a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{model_8c_a42168e51ee7171713d66b7dcbb41887a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{model_8c_ae44811dea0e1843c571619d692a463ac}\label{model_8c_ae44811dea0e1843c571619d692a463ac}} 
+\index{model.c@{model.c}!damage\_animation@{damage\_animation}}
+\index{damage\_animation@{damage\_animation}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{damage\_animation()}{damage\_animation()}}
+{\footnotesize\ttfamily void $\ast$ damage\+\_\+animation (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+function that make animation when robot has damage 
+
+\DoxyHorRuler{0}
+ Robot damage animation
+
+\begin{DoxyNote}{Note}
+\+\_\+secure\+\_\+led\+\_\+animation is used to secure threading 
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{192                                   \{}
+\DoxyCodeLine{193     \mbox{\hyperlink{model_8c_a8498583fd530c799fdd9046d09e10134}{\_secure\_led\_animation}} = 1;}
+\DoxyCodeLine{194     \textcolor{keywordtype}{int} animation\_time = 50000;}
+\DoxyCodeLine{195     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{196     \mbox{\hyperlink{model_8c_adf91428d3c07a9e825283b794ead7f4c}{set\_leds}}(0,0,0);}
+\DoxyCodeLine{197     usleep(animation\_time); }
+\DoxyCodeLine{198     \textcolor{keywordflow}{for}(i=0; i<5; i++)\{}
+\DoxyCodeLine{199         \mbox{\hyperlink{model_8c_adf91428d3c07a9e825283b794ead7f4c}{set\_leds}}(4,0,0);}
+\DoxyCodeLine{200         usleep(animation\_time);}
+\DoxyCodeLine{201         \mbox{\hyperlink{model_8c_adf91428d3c07a9e825283b794ead7f4c}{set\_leds}}(0,4,0);}
+\DoxyCodeLine{202         usleep(animation\_time);}
+\DoxyCodeLine{203         \mbox{\hyperlink{model_8c_adf91428d3c07a9e825283b794ead7f4c}{set\_leds}}(0,0,4);}
+\DoxyCodeLine{204         usleep(animation\_time);}
+\DoxyCodeLine{205     \}   }
+\DoxyCodeLine{206     \mbox{\hyperlink{model_8c_a8498583fd530c799fdd9046d09e10134}{\_secure\_led\_animation}} = 0;}
+\DoxyCodeLine{207 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:

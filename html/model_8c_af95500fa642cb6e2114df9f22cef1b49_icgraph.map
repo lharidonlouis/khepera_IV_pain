@@ -1,0 +1,6 @@
+<map id="print_sensors_diff" name="print_sensors_diff">
+<area shape="rect" id="node1" title="function that print diff between actual and previous sensor data" alt="" coords="388,5,513,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a8d387ae5e71c0596ea733356d5304663" title="function that print previous and actual sensor values" alt="" coords="209,5,340,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="104,5,161,32"/>
+<area shape="rect" id="node4" href="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program function." alt="" coords="5,5,56,32"/>
+</map>

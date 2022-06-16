@@ -1,0 +1,4 @@
+<map id="death_animation" name="death_animation">
+<area shape="rect" id="node1" title="function that make animation for death" alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#adf91428d3c07a9e825283b794ead7f4c" title="function that set color for 4 robot leds" alt="" coords="171,5,241,32"/>
+</map>

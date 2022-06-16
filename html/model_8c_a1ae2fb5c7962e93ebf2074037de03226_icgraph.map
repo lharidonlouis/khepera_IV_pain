@@ -1,0 +1,8 @@
+<map id="groom_animation" name="groom_animation">
+<area shape="rect" id="node1" title="function that make a grooming animation" alt="" coords="669,13,791,39"/>
+<area shape="rect" id="node2" href="$model_8c.html#a059df531c8f30b7a8700a6b1209fd666" title="function that increase physiological tegument variable" alt="" coords="563,13,621,39"/>
+<area shape="rect" id="node3" href="$model_8c.html#a9b71e438b829313af4267abdfa355e66" title="function that select sub&#45;behavioral group for tegument" alt="" coords="372,5,515,47"/>
+<area shape="rect" id="node4" href="$model_8c.html#a42168e51ee7171713d66b7dcbb41887a" title="function that select behavioral grroup to compute robot&#39;s speed based on input" alt="" coords="209,13,324,39"/>
+<area shape="rect" id="node5" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="104,13,161,39"/>
+<area shape="rect" id="node6" href="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program function." alt="" coords="5,13,56,39"/>
+</map>

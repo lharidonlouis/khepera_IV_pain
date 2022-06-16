@@ -1,0 +1,17 @@
+digraph "tegument_behavioral_group"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="tegument_behavioral\l_group",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="function that select sub-behavioral group for tegument"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="groom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a059df531c8f30b7a8700a6b1209fd666",tooltip="function that increase physiological tegument variable"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="groom_animation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a1ae2fb5c7962e93ebf2074037de03226",tooltip="function that make a grooming animation"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="move",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e",tooltip="function to make robot move"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="seek_grooming_spot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a23bae2c9f13446680670ca6f98121f22",tooltip="function that select send mootor control for groooming spot seeking"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+}

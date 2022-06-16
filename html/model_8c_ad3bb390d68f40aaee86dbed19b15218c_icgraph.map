@@ -1,0 +1,9 @@
+<map id="induce_damage" name="induce_damage">
+<area shape="rect" id="node1" title="function that decrease physiological variable for integrity" alt="" coords="681,56,795,83"/>
+<area shape="rect" id="node2" href="$model_8c.html#a045b7ae19635db4c0c565677d9cd3071" title="function that compute circulare based damage" alt="" coords="530,5,626,32"/>
+<area shape="rect" id="node7" href="$model_8c.html#aff392d961d3f5d759aa041d27780a848" title="function that compute speed based damage" alt="" coords="523,56,633,83"/>
+<area shape="rect" id="node3" href="$model_8c.html#a9772aee7d0e45a3f4927f4df78ee5ed7" title="function that check if there is damage based on two types of damage" alt="" coords="351,56,475,83"/>
+<area shape="rect" id="node4" href="$model_8c.html#ab5b9c8b8ad9d20f047d6ff2ba808dacc" title="function that update the internal variables, compute deficits, cues and motivation" alt="" coords="209,81,303,108"/>
+<area shape="rect" id="node5" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="104,81,161,108"/>
+<area shape="rect" id="node6" href="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program function." alt="" coords="5,81,56,108"/>
+</map>

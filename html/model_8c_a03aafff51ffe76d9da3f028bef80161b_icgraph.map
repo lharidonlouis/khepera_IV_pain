@@ -1,0 +1,7 @@
+<map id="eat" name="eat">
+<area shape="rect" id="node1" title="function that increase physiological energy variable" alt="" coords="587,5,627,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a256b18090d240375c58448c8693d391b" title="function that select sub&#45;behavioral group for energy" alt="" coords="372,5,539,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#a42168e51ee7171713d66b7dcbb41887a" title="function that select behavioral grroup to compute robot&#39;s speed based on input" alt="" coords="209,5,324,32"/>
+<area shape="rect" id="node4" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="104,5,161,32"/>
+<area shape="rect" id="node5" href="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program function." alt="" coords="5,5,56,32"/>
+</map>

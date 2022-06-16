@@ -1,0 +1,16 @@
+<map id="speed_damage" name="speed_damage">
+<area shape="rect" id="node1" title="function that compute speed based damage" alt="" coords="5,85,116,112"/>
+<area shape="rect" id="node2" href="$model_8c.html#a77821830aaf0356c92238ea9d040fd9f" title="function that get mean of table and normalize it but for a float table" alt="" coords="164,35,324,61"/>
+<area shape="rect" id="node3" href="$model_8c.html#ad3bb390d68f40aaee86dbed19b15218c" title="function that decrease physiological variable for integrity" alt="" coords="187,212,301,239"/>
+<area shape="rect" id="node4" href="$model_8c.html#ae44811dea0e1843c571619d692a463ac" title="function that make animation when robot has damage" alt="" coords="372,376,503,403"/>
+<area shape="rect" id="node6" href="$model_8c.html#ab5b9c8b8ad9d20f047d6ff2ba808dacc" title="function that update the internal variables, compute deficits, cues and motivation" alt="" coords="391,173,484,200"/>
+<area shape="rect" id="node5" href="$model_8c.html#adf91428d3c07a9e825283b794ead7f4c" title="function that set color for 4 robot leds" alt="" coords="591,376,661,403"/>
+<area shape="rect" id="node7" href="$model_8c.html#a9772aee7d0e45a3f4927f4df78ee5ed7" title="function that check if there is damage based on two types of damage" alt="" coords="564,5,688,32"/>
+<area shape="rect" id="node9" href="$model_8c.html#a507792eccb7b93c5c65436fd8f37c84b" title="function that compute cues" alt="" coords="573,275,679,301"/>
+<area shape="rect" id="node11" href="$model_8c.html#a4839931386cb5fae8e015d2173de57e0" title="function that compute deficits for physiological internal values" alt="" coords="569,173,683,200"/>
+<area shape="rect" id="node12" href="$model_8c.html#a60c16f1cf7d0c222208477d5810a4020" title="function that compute motivations for physiological internal values" alt="" coords="553,224,699,251"/>
+<area shape="rect" id="node13" href="$model_8c.html#a1a58010fca227c64de0d57e5f5a8a0ea" title="function that decrease physiological variables" alt="" coords="551,57,701,98"/>
+<area shape="rect" id="node14" href="$model_8c.html#afdbf3026a1d40b44651f0f5f76ad7102" title="function to read and store sensors values" alt="" coords="579,123,673,149"/>
+<area shape="rect" id="node8" href="$model_8c.html#a045b7ae19635db4c0c565677d9cd3071" title="function that compute circulare based damage" alt="" coords="776,325,872,352"/>
+<area shape="rect" id="node10" href="$model_8c.html#a762377c04f5d71221c66a23c81777f96" title="function that get mean of table and normalize it" alt="" coords="749,275,899,301"/>
+</map>

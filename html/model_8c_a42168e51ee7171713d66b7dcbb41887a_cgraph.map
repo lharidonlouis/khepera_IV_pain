@@ -1,0 +1,13 @@
+<map id="compute_speed" name="compute_speed">
+<area shape="rect" id="node1" title="function that select behavioral grroup to compute robot&#39;s speed based on input" alt="" coords="5,107,120,133"/>
+<area shape="rect" id="node2" href="$model_8c.html#a256b18090d240375c58448c8693d391b" title="function that select sub&#45;behavioral group for energy" alt="" coords="168,48,335,75"/>
+<area shape="rect" id="node6" href="$model_8c.html#a8de3d99966a8a9e1e793c359877b04a3" title="function that select sub&#45;behavioral group for integrity" alt="" coords="184,99,319,141"/>
+<area shape="rect" id="node8" href="$model_8c.html#a9b71e438b829313af4267abdfa355e66" title="function that select sub&#45;behavioral group for tegument" alt="" coords="180,165,323,206"/>
+<area shape="rect" id="node3" href="$model_8c.html#a03aafff51ffe76d9da3f028bef80161b" title="function that increase physiological energy variable" alt="" coords="392,5,432,32"/>
+<area shape="rect" id="node4" href="$model_8c.html#ac05d0fc423a7e961f72d76e0b5cdfa9e" title="function that select send mootor control for food seeking" alt="" coords="519,56,602,83"/>
+<area shape="rect" id="node5" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="680,132,735,159"/>
+<area shape="rect" id="node7" href="$model_8c.html#a99aa10b152e9998e638b721be1840266" title="function that give motor speed avoidance control" alt="" coords="385,107,439,133"/>
+<area shape="rect" id="node9" href="$model_8c.html#a059df531c8f30b7a8700a6b1209fd666" title="function that increase physiological tegument variable" alt="" coords="383,157,441,184"/>
+<area shape="rect" id="node11" href="$model_8c.html#a23bae2c9f13446680670ca6f98121f22" title="function that select send mootor control for groooming spot seeking" alt="" coords="489,208,632,235"/>
+<area shape="rect" id="node10" href="$model_8c.html#a1ae2fb5c7962e93ebf2074037de03226" title="function that make a grooming animation" alt="" coords="500,157,621,184"/>
+</map>

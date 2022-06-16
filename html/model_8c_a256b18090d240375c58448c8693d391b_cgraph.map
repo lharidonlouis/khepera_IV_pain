@@ -1,0 +1,6 @@
+<map id="energy_behavioral_group" name="energy_behavioral_group">
+<area shape="rect" id="node1" title="function that select sub&#45;behavioral group for energy" alt="" coords="5,31,172,57"/>
+<area shape="rect" id="node2" href="$model_8c.html#a03aafff51ffe76d9da3f028bef80161b" title="function that increase physiological energy variable" alt="" coords="241,5,281,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#ac05d0fc423a7e961f72d76e0b5cdfa9e" title="function that select send mootor control for food seeking" alt="" coords="220,56,303,83"/>
+<area shape="rect" id="node4" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="351,56,405,83"/>
+</map>

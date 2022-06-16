@@ -1,0 +1,42 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Main program function." alt="" coords="5,545,56,572"/>
+<area shape="rect" id="node2" href="$model_8c.html#a024bee244394eeb174d636f297a7e857" title="display battery info" alt="" coords="104,443,215,469"/>
+<area shape="rect" id="node3" href="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142" title="Robot model based on our work." alt="" coords="131,493,188,520"/>
+<area shape="rect" id="node26" href="$model_8c.html#a88cc80b1bb6c547c836b5490c0db3099" title="stop robot&#39;s motor" alt="" coords="284,727,380,753"/>
+<area shape="rect" id="node40" href="$model_8c.html#a51433c029591b579b2325061d785ca36" title="Robot is controlled with zqsd input, a for quit, e for stop." alt="" coords="139,727,179,753"/>
+<area shape="rect" id="node4" href="$model_8c.html#a42168e51ee7171713d66b7dcbb41887a" title="function that select behavioral grroup to compute robot&#39;s speed based on input" alt="" coords="275,519,389,545"/>
+<area shape="rect" id="node8" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="1107,591,1162,617"/>
+<area shape="rect" id="node15" href="$model_8c.html#a13b684a14e79f0144fbfdbd71bb6bc6e" title="function that make animation for death" alt="" coords="1076,47,1193,73"/>
+<area shape="rect" id="node17" href="$model_8c.html#afdbf3026a1d40b44651f0f5f76ad7102" title="function to read and store sensors values" alt="" coords="486,363,579,389"/>
+<area shape="rect" id="node18" href="$model_8c.html#a0d6be2c2d6d79c4bf8daa9019640e5a7" title="function that store actual for sensor values for later use" alt="" coords="263,468,401,495"/>
+<area shape="rect" id="node19" href="$model_8c.html#a8d387ae5e71c0596ea733356d5304663" title="function that print previous and actual sensor values" alt="" coords="267,676,397,703"/>
+<area shape="rect" id="node25" href="$model_8c.html#aa752ff33a7112b07dc5f606c72432459" title="function that print internal variables" alt="" coords="293,569,371,596"/>
+<area shape="rect" id="node27" href="$model_8c.html#ab5b9c8b8ad9d20f047d6ff2ba808dacc" title="function that update the internal variables, compute deficits, cues and motivation" alt="" coords="285,261,379,288"/>
+<area shape="rect" id="node39" href="$model_8c.html#a5bf656f8e903944d7b5c9e1166eb71c4" title="Winner take all for decision making." alt="" coords="273,211,391,237"/>
+<area shape="rect" id="node5" href="$model_8c.html#a256b18090d240375c58448c8693d391b" title="function that select sub&#45;behavioral group for energy" alt="" coords="449,464,616,491"/>
+<area shape="rect" id="node9" href="$model_8c.html#a8de3d99966a8a9e1e793c359877b04a3" title="function that select sub&#45;behavioral group for integrity" alt="" coords="465,515,600,557"/>
+<area shape="rect" id="node11" href="$model_8c.html#a9b71e438b829313af4267abdfa355e66" title="function that select sub&#45;behavioral group for tegument" alt="" coords="461,581,604,622"/>
+<area shape="rect" id="node6" href="$model_8c.html#a03aafff51ffe76d9da3f028bef80161b" title="function that increase physiological energy variable" alt="" coords="719,464,759,491"/>
+<area shape="rect" id="node7" href="$model_8c.html#ac05d0fc423a7e961f72d76e0b5cdfa9e" title="function that select send mootor control for food seeking" alt="" coords="900,515,983,541"/>
+<area shape="rect" id="node10" href="$model_8c.html#a99aa10b152e9998e638b721be1840266" title="function that give motor speed avoidance control" alt="" coords="915,565,968,592"/>
+<area shape="rect" id="node12" href="$model_8c.html#a059df531c8f30b7a8700a6b1209fd666" title="function that increase physiological tegument variable" alt="" coords="709,616,768,643"/>
+<area shape="rect" id="node14" href="$model_8c.html#a23bae2c9f13446680670ca6f98121f22" title="function that select send mootor control for groooming spot seeking" alt="" coords="870,667,1013,693"/>
+<area shape="rect" id="node13" href="$model_8c.html#a1ae2fb5c7962e93ebf2074037de03226" title="function that make a grooming animation" alt="" coords="881,616,1002,643"/>
+<area shape="rect" id="node16" href="$model_8c.html#adf91428d3c07a9e825283b794ead7f4c" title="function that set color for 4 robot leds" alt="" coords="1248,181,1319,208"/>
+<area shape="rect" id="node20" href="$model_8c.html#a970963d2eed5a3ef973adef84ac6b735" title="function that print sensor values" alt="" coords="483,748,583,775"/>
+<area shape="rect" id="node21" href="$model_8c.html#a4c16fb089e42438d504caa856a3c97ac" title="function that print diff between actual and previous sensor data" alt="" coords="469,799,597,841"/>
+<area shape="rect" id="node22" href="$model_8c.html#af95500fa642cb6e2114df9f22cef1b49" title="function that print diff between actual and previous sensor data" alt="" coords="470,865,595,892"/>
+<area shape="rect" id="node23" href="$model_8c.html#ae5cb99f889d3e3964f2107a2f0b660e3" title="function that print previous sensor values" alt="" coords="459,647,606,673"/>
+<area shape="rect" id="node24" href="$model_8c.html#a5bf485e78be0ae99ec1a866746d462b9" title="function that print speed table" alt="" coords="461,697,604,724"/>
+<area shape="rect" id="node28" href="$model_8c.html#a9772aee7d0e45a3f4927f4df78ee5ed7" title="function that check if there is damage based on two types of damage" alt="" coords="471,261,595,288"/>
+<area shape="rect" id="node34" href="$model_8c.html#a507792eccb7b93c5c65436fd8f37c84b" title="function that compute cues" alt="" coords="479,43,586,69"/>
+<area shape="rect" id="node36" href="$model_8c.html#a4839931386cb5fae8e015d2173de57e0" title="function that compute deficits for physiological internal values" alt="" coords="475,93,590,120"/>
+<area shape="rect" id="node37" href="$model_8c.html#a60c16f1cf7d0c222208477d5810a4020" title="function that compute motivations for physiological internal values" alt="" coords="459,144,606,171"/>
+<area shape="rect" id="node38" href="$model_8c.html#a1a58010fca227c64de0d57e5f5a8a0ea" title="function that decrease physiological variables" alt="" coords="457,195,608,237"/>
+<area shape="rect" id="node29" href="$model_8c.html#a045b7ae19635db4c0c565677d9cd3071" title="function that compute circulare based damage" alt="" coords="691,261,787,288"/>
+<area shape="rect" id="node32" href="$model_8c.html#aff392d961d3f5d759aa041d27780a848" title="function that compute speed based damage" alt="" coords="683,211,794,237"/>
+<area shape="rect" id="node30" href="$model_8c.html#ad3bb390d68f40aaee86dbed19b15218c" title="function that decrease physiological variable for integrity" alt="" coords="885,261,998,288"/>
+<area shape="rect" id="node31" href="$model_8c.html#ae44811dea0e1843c571619d692a463ac" title="function that make animation when robot has damage" alt="" coords="1069,207,1200,233"/>
+<area shape="rect" id="node33" href="$model_8c.html#a77821830aaf0356c92238ea9d040fd9f" title="function that get mean of table and normalize it but for a float table" alt="" coords="861,211,1021,237"/>
+<area shape="rect" id="node35" href="$model_8c.html#a762377c04f5d71221c66a23c81777f96" title="function that get mean of table and normalize it" alt="" coords="664,43,813,69"/>
+</map>

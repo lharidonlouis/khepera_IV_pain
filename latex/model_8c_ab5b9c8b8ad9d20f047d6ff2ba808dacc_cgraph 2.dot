@@ -1,0 +1,36 @@
+digraph "update_vars"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="update_vars",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="function that update the internal variables, compute deficits, cues and motivation"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="check_if_damage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a9772aee7d0e45a3f4927f4df78ee5ed7",tooltip="function that check if there is damage based on two types of damage"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="circ_damage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a045b7ae19635db4c0c565677d9cd3071",tooltip="function that compute circulare based damage"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="induce_damage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#ad3bb390d68f40aaee86dbed19b15218c",tooltip="function that decrease physiological variable for integrity"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="damage_animation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#ae44811dea0e1843c571619d692a463ac",tooltip="function that make animation when robot has damage"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="set_leds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#adf91428d3c07a9e825283b794ead7f4c",tooltip="function that set color for 4 robot leds"];
+  Node4 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="speed_damage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#aff392d961d3f5d759aa041d27780a848",tooltip="function that compute speed based damage"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="get_mean_normalized_f",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a77821830aaf0356c92238ea9d040fd9f",tooltip="function that get mean of table and normalize it but for a float table"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="compute_cues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a507792eccb7b93c5c65436fd8f37c84b",tooltip="function that compute cues"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="get_mean_normalized",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a762377c04f5d71221c66a23c81777f96",tooltip="function that get mean of table and normalize it"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="compute_deficit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a4839931386cb5fae8e015d2173de57e0",tooltip="function that compute deficits for physiological internal values"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="compute_motivations",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a60c16f1cf7d0c222208477d5810a4020",tooltip="function that compute motivations for physiological internal values"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="decrease_physoligical\l_variables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a1a58010fca227c64de0d57e5f5a8a0ea",tooltip="function that decrease physiological variables"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="get_sensors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#afdbf3026a1d40b44651f0f5f76ad7102",tooltip="function to read and store sensors values"];
+}

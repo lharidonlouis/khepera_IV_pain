@@ -1,0 +1,4 @@
+<map id="seek_grooming_spot" name="seek_grooming_spot">
+<area shape="rect" id="node1" title="function that select send mootor control for groooming spot seeking" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a22159ec5786bcd0c518d86dc97d44b4e" title="function to make robot move" alt="" coords="196,5,251,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="turn_off_leds" name="turn_off_leds">
+<area shape="rect" id="node1" title="function that turn of all leds" alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#adf91428d3c07a9e825283b794ead7f4c" title="function that set color for 4 robot leds" alt="" coords="151,5,221,32"/>
+</map>

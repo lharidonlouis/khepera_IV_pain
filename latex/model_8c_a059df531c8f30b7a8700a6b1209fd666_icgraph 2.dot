@@ -1,0 +1,16 @@
+digraph "groom"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="groom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="function that increase physiological tegument variable"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tegument_behavioral\l_group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a9b71e438b829313af4267abdfa355e66",tooltip="function that select sub-behavioral group for tegument"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="compute_speed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a42168e51ee7171713d66b7dcbb41887a",tooltip="function that select behavioral grroup to compute robot's speed based on input"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#afff2d3c32d3cf9812c2844d012a17142",tooltip="Robot model based on our work."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$model_8c.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip="Main program function."];
+}

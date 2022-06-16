@@ -1,0 +1,8 @@
+<map id="print_clean_sensor" name="print_clean_sensor">
+<area shape="rect" id="node1" title="function that print previous and actual sensor values" alt="" coords="5,123,136,149"/>
+<area shape="rect" id="node2" href="$model_8c.html#a970963d2eed5a3ef973adef84ac6b735" title="function that print sensor values" alt="" coords="207,5,307,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#a4c16fb089e42438d504caa856a3c97ac" title="function that print diff between actual and previous sensor data" alt="" coords="193,57,321,98"/>
+<area shape="rect" id="node4" href="$model_8c.html#af95500fa642cb6e2114df9f22cef1b49" title="function that print diff between actual and previous sensor data" alt="" coords="195,123,320,149"/>
+<area shape="rect" id="node5" href="$model_8c.html#ae5cb99f889d3e3964f2107a2f0b660e3" title="function that print previous sensor values" alt="" coords="184,173,331,200"/>
+<area shape="rect" id="node6" href="$model_8c.html#a5bf485e78be0ae99ec1a866746d462b9" title="function that print speed table" alt="" coords="186,224,329,251"/>
+</map>
