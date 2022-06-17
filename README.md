@@ -1,6 +1,6 @@
 # Khepera IV model for decision making in TRP
 
-This is a robot model designed for Khepera IV in a TRP homeostasis context.
+This is a robot  model designed for Khepera IV in a Two Resources Problem (TRP) where robots needs to choose between two resources to maintain physiological variables above a certain level.
 
 
 ## Author
